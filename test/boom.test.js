@@ -11,6 +11,6 @@ describe('GET /boom', () => {
     const res = await request(app).get('/boom')
     expect(res.status).toBe(500)
     expect(res.body.error).toBe(true)
-    expect(typeof res.body.message).toBe('string')
+    expect(res.body.message).toBe('Boom!')
   })
 })
