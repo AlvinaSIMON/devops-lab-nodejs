@@ -18,4 +18,9 @@ describe('GET /version', () => {
     const res = await request(app).get('/version')
     expect(res.headers['content-type']).toMatch(/application\/json/)
   })
+
+  it('returns a version in x.x.x format', async () => {
+    const res = await request(app).get('/version')
+    expect(res.body.version).toMatch(/^\d+\.\d+\.\d+$/)
+  })
 })
